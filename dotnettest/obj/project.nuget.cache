@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zbWFojzJpf8VSYE+LyYcunImTYfGmeASIPH7YNkswm5pfLjtVwHC3aIt4A17q6sdZNv1ATfuJe7n4YkAiXBNdw==",
+  "success": true,
+  "projectFilePath": "/home/andrew/dotnettest/dotnettest.csproj",
+  "expectedPackageFiles": [
+    "/home/andrew/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.2/microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

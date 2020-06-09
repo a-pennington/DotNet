@@ -1,0 +1,13 @@
+
+dotnet new web
+
+dotnet restore
+
+dotnet build
+
+sudo dotnet publish --output /var/dotnet/dotnettest
+
+dotnet run
+
+sudo systemctl status supervisor.service
+
