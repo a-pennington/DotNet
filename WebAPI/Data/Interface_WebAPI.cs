@@ -3,10 +3,10 @@ using WebAPI.Models;
 
 namespace WebAPI.Data
 {
-	public interface I_WebAPI
+	public interface I_WebAPIRepo
 	{
-		IEnumerable<WebAPI> GetAllCommands();
-		WebAPI GetCommandByID(int ID);
+		IEnumerable<Command> GetAllCommands();
+		Command GetCommandByID(int ID);
 	}
 
 }
