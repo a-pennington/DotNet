@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/andrew/DotNet/WebAPI/WebAPI.csproj",
+      "projectUniqueName": "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "/home/andrew/DotNet/WebAPI/WebAPI.csproj",
+      "projectPath": "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj",
       "packagesPath": "/home/andrew/.nuget/packages/",
-      "outputPath": "/home/andrew/DotNet/WebAPI/obj/",
+      "outputPath": "/home/andrew/Documents/Code/DotNet/WebAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/andrew/.nuget/NuGet/NuGet.Config"
