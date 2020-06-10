@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/andrew/dotnettest/dotnettest.csproj": {}
+    "/home/andrew/DotNet/dotnettest/dotnettest.csproj": {}
   },
   "projects": {
-    "/home/andrew/dotnettest/dotnettest.csproj": {
+    "/home/andrew/DotNet/dotnettest/dotnettest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andrew/dotnettest/dotnettest.csproj",
+        "projectUniqueName": "/home/andrew/DotNet/dotnettest/dotnettest.csproj",
         "projectName": "dotnettest",
-        "projectPath": "/home/andrew/dotnettest/dotnettest.csproj",
+        "projectPath": "/home/andrew/DotNet/dotnettest/dotnettest.csproj",
         "packagesPath": "/home/andrew/.nuget/packages/",
-        "outputPath": "/home/andrew/dotnettest/obj/",
+        "outputPath": "/home/andrew/DotNet/dotnettest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/andrew/.nuget/NuGet/NuGet.Config"
