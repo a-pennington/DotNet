@@ -16,7 +16,7 @@ namespace WebAPI
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("Properties/hosting.json", optional: true)
+                .AddJsonFile("hosting.json", optional: true)
                 .Build();
             
             var host = new WebHostBuilder()
@@ -24,6 +24,9 @@ namespace WebAPI
                 .UseConfiguration(config)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .ConfigureAppConfiguration((context, builder) => builder.SetBasePath(context.HostingEnvironment.ContentRootPath)
+                       .AddJsonFile("appsettings.json")
+                       .Build())
                 .UseStartup<Startup>()
                 .Build();
                 
@@ -32,6 +35,11 @@ namespace WebAPI
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                    logging.AddConsole();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
