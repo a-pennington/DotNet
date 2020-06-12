@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebAPI.Models;
@@ -21,6 +22,15 @@ namespace WebAPI.Data
             return _context.DbSetPerson.FirstOrDefault(p => p.ID == id);
         }
 
-        
+        void I_WebAPIRepo.CreatePerson(Person person)
+        {
+            if (person == null) { throw new ArgumentNullException(nameof(person)); }
+            _context.DbSetPerson.Add(person);
+        }
+
+        bool I_WebAPIRepo.SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }

@@ -22,5 +22,15 @@ namespace WebAPI.Data
         {
             return new Person{ID=0, Firstname="Testing", Surname="User", Platform="This Works!"};
         }
+
+        void I_WebAPIRepo.CreatePerson(Person person)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        bool I_WebAPIRepo.SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

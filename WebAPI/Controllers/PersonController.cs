@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
         }
 
         // GET api/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetPersonByID")]
         public ActionResult <PersonReadDTO> GetPersonByID(int id)
         {
             var personItem = _repository.GetPersonByID(id);
@@ -39,5 +39,28 @@ namespace WebAPI.Controllers
             }
             return NotFound();
         }
+
+        // POST api
+        [HttpPost]
+        public ActionResult <PersonReadDTO> CreatePerson(PersonCreateDTO newPerson)
+        {
+            var personModel = _mapper.Map<Person>(newPerson);
+            _repository.CreatePerson(personModel);
+            _repository.SaveChanges();
+
+            var personReadDTO = _mapper.Map<PersonReadDTO>(personModel);
+
+            return CreatedAtRoute(nameof(GetPersonByID), new {ID = personReadDTO.ID}, personReadDTO);
+            //return Ok(personReadDTO);
+        }
+
+
+
+
+
+
+
+
+
     }
 }

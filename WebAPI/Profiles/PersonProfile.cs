@@ -8,7 +8,9 @@ namespace WebAPI.Profiles
     {
         public PersonProfile()
         {
+            //  Map = Source -> Target
             CreateMap<Person, PersonReadDTO>();
+            CreateMap<PersonCreateDTO, Person>();
         }
     }
 }
