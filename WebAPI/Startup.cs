@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 using WebAPI.Data;
 
@@ -30,6 +31,7 @@ namespace WebAPI
         {
             services.AddDbContext<WebAPIContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<I_WebAPIRepo, SQLWebAPIRepo>();
         }
 
