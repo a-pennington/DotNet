@@ -32,5 +32,17 @@ namespace WebAPI.Data
         {
             return (_context.SaveChanges() >= 0);
         }
+
+        void I_WebAPI_Repo.UpdatePerson(Person person)
+        {
+            // Don't need to do anything
+        }
+        
+        void I_WebAPI_Repo.DeletePerson(Person person)
+        {
+             if (person == null) { throw new ArgumentNullException(nameof(person)); }
+            _context.DbSetPerson.Remove(person);
+        }
+
     }
 }

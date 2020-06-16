@@ -32,5 +32,14 @@ namespace WebAPI.Data
         {
             throw new System.NotImplementedException();
         }
+
+        void I_WebAPI_Repo.UpdatePerson(Person person)
+        {
+            throw new System.NotImplementedException();
+        }
+        public void DeletePerson(Person person)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

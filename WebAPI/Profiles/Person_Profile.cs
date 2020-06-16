@@ -11,6 +11,8 @@ namespace WebAPI.Profiles
             //  Map = Source -> Target
             CreateMap<Person, Person_Read_DTO>();
             CreateMap<Person_Create_DTO, Person>();
+            CreateMap<Person_Update_DTO, Person>();
+            CreateMap<Person, Person_Update_DTO>();
         }
     }
 }

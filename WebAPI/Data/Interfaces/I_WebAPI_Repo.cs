@@ -9,6 +9,8 @@ namespace WebAPI.Data
 		Person GetPersonByID(int ID);	
 		void CreatePerson(Person person);
 		bool SaveChanges();
+		void UpdatePerson(Person person);
+		void DeletePerson(Person person);
 	}
 
 }
