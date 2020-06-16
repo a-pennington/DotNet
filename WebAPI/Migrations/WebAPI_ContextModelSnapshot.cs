@@ -7,8 +7,8 @@ using WebAPI.Data;
 
 namespace WebAPI.Migrations
 {
-    [DbContext(typeof(WebAPIContext))]
-    partial class WebAPIContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(WebAPI_Context))]
+    partial class WebAPI_ContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

@@ -3,7 +3,7 @@ using WebAPI.Models;
 
 namespace WebAPI.Data
 {
-    public class MockWebAPIRepo : I_WebAPIRepo
+    public class Mock_WebAPI_Repo : I_WebAPI_Repo
     {
         public IEnumerable<Person> GetAllPeople()
         {
@@ -23,12 +23,12 @@ namespace WebAPI.Data
             return new Person{ID=0, Firstname="Testing", Surname="User", Platform="This Works!"};
         }
 
-        void I_WebAPIRepo.CreatePerson(Person person)
+        void I_WebAPI_Repo.CreatePerson(Person person)
         {
             throw new System.NotImplementedException();
         }
 
-        bool I_WebAPIRepo.SaveChanges()
+        bool I_WebAPI_Repo.SaveChanges()
         {
             throw new System.NotImplementedException();
         }

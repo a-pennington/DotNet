@@ -29,10 +29,10 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WebAPIContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<WebAPI_Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddScoped<I_WebAPIRepo, SQLWebAPIRepo>();
+            services.AddScoped<I_WebAPI_Repo, SQL_WebAPI_Repo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,7 +3,7 @@ using WebAPI.Models;
 
 namespace WebAPI.Data
 {
-	public interface I_WebAPIRepo
+	public interface I_WebAPI_Repo
 	{
 		IEnumerable<Person> GetAllPeople();
 		Person GetPersonByID(int ID);	

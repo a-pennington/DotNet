@@ -8,8 +8,8 @@ using WebAPI.Data;
 
 namespace WebAPI.Migrations
 {
-    [DbContext(typeof(WebAPIContext))]
-    [Migration("20200611144242_PersonMigration")]
+    [DbContext(typeof(WebAPI_Context))]
+    [Migration("20200612145645_PersonMigration")]
     partial class PersonMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

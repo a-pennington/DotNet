@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAPI.DTOs
 {
-	public class PersonCreateDTO
+	public class Person_Create_DTO
 	{
 		[Required]
 		public string Firstname { get; set; }
