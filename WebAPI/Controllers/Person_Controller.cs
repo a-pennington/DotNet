@@ -30,10 +30,10 @@ namespace WebAPI.Controllers
         }
 
         // GET api/person/{id}
-        [HttpGet("{id}", Name="GetPersonByID")]
-        public ActionResult <Person_Read_DTO> GetPersonByID(int id)
+        [HttpGet("{ID}", Name="GetPersonByID")]
+        public ActionResult <Person_Read_DTO> GetPersonByID(int ID)
         {
-            var personItem = _repository.GetPersonByID(id);     // Gets the item at position ID
+            var personItem = _repository.GetPersonByID(ID);     // Gets the item at position ID
             if (personItem != null) 
             { 
                 return Ok(_mapper.Map<Person_Read_DTO>(personItem));    // Maps the person to the data transfer object for return to the client
