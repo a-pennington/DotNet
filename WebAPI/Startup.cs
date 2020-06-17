@@ -15,6 +15,7 @@ using AutoMapper;
 using Newtonsoft.Json.Serialization;
 
 using WebAPI.Data;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace WebAPI
 {
@@ -37,6 +38,12 @@ namespace WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<I_WebAPI_Repo, SQL_WebAPI_Repo>();
             
+
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = 
+                    ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+            });
             // Swagger
             services.AddSwaggerDocument(config => {
                 config.PostProcess = document => {
@@ -57,9 +64,16 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseForwardedHeaders();
+                app.UsePathBase("/WebAPI")
             }
 
             app.UseHttpsRedirection();
@@ -75,20 +89,7 @@ namespace WebAPI
 
             // Swagger Front End
             app.UseOpenApi();
-            app.UseSwaggerUi3(config => 
-            {
-                config.TransformToExternalPath = (internalUiRoute, request) =>
-                {
-                    if (internalUiRoute.StartsWith("/") == true && internalUiRoute.StartsWith(request.PathBase) == false)
-                    {
-                        return request.PathBase + internalUiRoute;
-                    }
-                    else
-                    {
-                        return internalUiRoute;
-                    }
-                };
-            });
+            app.UseSwaggerUi3();
         }
     }
 }
