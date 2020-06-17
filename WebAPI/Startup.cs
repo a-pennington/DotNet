@@ -46,7 +46,7 @@ namespace WebAPI
             // Swagger
             services.AddSwaggerDocument(config => {
                 config.PostProcess = document => {
-                    document.BasePath = "/";
+                    document.BasePath = "/WebAPI/";
                     document.Info.Version = "v1";
                     document.Info.Title = "WebAPI";
                     document.Info.Description = "";
