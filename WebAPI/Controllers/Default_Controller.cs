@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-/*    [ApiExplorerSettings(IgnoreApi = true)]
+    [ApiExplorerSettings(IgnoreApi = true)]
      public class DefaultController : Controller
     {
         [Route("/")]
@@ -10,7 +10,7 @@ namespace WebAPI.Controllers
         [Route("/swagger")]
         public IActionResult Index()
         {
-            return new RedirectResult("/swagger/index.html");
+            return new RedirectResult("/WebAPI/swagger/index.html");
         }
-    } */
+    } 
 }
