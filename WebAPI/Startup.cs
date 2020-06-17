@@ -38,7 +38,7 @@ namespace WebAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<I_WebAPI_Repo, SQL_WebAPI_Repo>();
             
-
+            services.AddMvc();
             services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.ForwardedHeaders = 
@@ -71,8 +71,10 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseForwardedHeaders();
-            app.UsePathBase("/WebAPI");
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
 
             app.UseHttpsRedirection();
 
