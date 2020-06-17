@@ -73,7 +73,7 @@ namespace WebAPI
             else
             {
                 app.UseForwardedHeaders();
-                app.UsePathBase("/WebAPI")
+                app.UsePathBase("/WebAPI");
             }
 
             app.UseHttpsRedirection();
