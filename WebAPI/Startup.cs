@@ -83,9 +83,12 @@ namespace WebAPI
             });
 
             // Swagger Front End
+            var swaggerRoute;
+            if (env.IsDevelopment()) { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "../swagger/v1/swagger.json") }
+            else { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "../v1/swagger.json") }
             app.UseOpenApi();
             app.UseSwaggerUi3(config => {
-                config.SwaggerRoutes.Add(new NSwag.AspNetCore.SwaggerUi3Route("v1", "../swagger/v1/swagger.json"));
+                config.SwaggerRoutes.Add(swaggerRoute);
             });
         }
     }
