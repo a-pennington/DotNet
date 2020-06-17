@@ -67,7 +67,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UsePathBase(new Microsoft.AspNetCore.Http.PathString("/WebAPI"));
+            
             app.UseForwardedHeaders();
 
             app.UseHttpsRedirection();
@@ -83,7 +84,9 @@ namespace WebAPI
 
             // Swagger Front End
             app.UseOpenApi();
-            app.UseSwaggerUi3();
+            app.UseSwaggerUi3(config => {
+                config.SwaggerRoutes.Add(new NSwag.AspNetCore.SwaggerUi3Route("v1", "../swagger/v1/swagger.json"));
+            });
         }
     }
 }
