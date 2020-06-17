@@ -10,7 +10,7 @@ namespace WebAPI.Controllers
         [Route("/swagger")]
         public IActionResult Index()
         {
-            return new RedirectResult("/swagger/index.html");
+            return new RedirectResult("~/swagger/index.html");
         }
     }
 }
