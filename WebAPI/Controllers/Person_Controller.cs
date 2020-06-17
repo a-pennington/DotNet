@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.JsonPatch;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/person")] // Defines the url from the port i.e. localhost:5000/api
+    [Route("person")] // Defines the url from the port i.e. localhost:5000/person
     public class Person_Controller : ControllerBase
     {
         private readonly I_WebAPI_Repo _repository;
@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
             _mapper = mapper;
         }
 
-        // GET api/person
+        // GET person
         [HttpGet]
         public ActionResult <IEnumerable<Person_Read_DTO>> GetAllPeople()
         {
@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<Person_Read_DTO>>(peopleItem));   // Maps the items found to the data transfer object for return to the client
         }
 
-        // GET api/person/{id}
+        // GET person/{id}
         [HttpGet("{ID}", Name="GetPersonByID")]
         public ActionResult <Person_Read_DTO> GetPersonByID(int ID)
         {
@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
             return NotFound();
         }
 
-        // POST api/person
+        // POST person
         [HttpPost]
         public ActionResult <Person_Read_DTO> CreatePerson(Person_Create_DTO newPerson)
         {
@@ -54,7 +54,7 @@ namespace WebAPI.Controllers
             return CreatedAtRoute(nameof(GetPersonByID), new {ID = personReadDTO.ID}, personReadDTO);   
         }
 
-        // PUT api/person/{id}
+        // PUT person/{id}
         [HttpPut("{ID}")]
         public ActionResult UpdatePerson(int ID, Person_Update_DTO newPerson)
         {
@@ -68,7 +68,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        // PATCH api/person/{id}
+        // PATCH person/{id}
         [HttpPatch("{ID}")]
         public ActionResult PartialPersonUpdate(int ID, JsonPatchDocument<Person_Update_DTO> patchDoc)
         {
@@ -86,7 +86,7 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
-        // DELETE api/person/{id}
+        // DELETE person/{id}
         [HttpDelete("{ID}")]
         public ActionResult DeletePerson(int ID)
         {
