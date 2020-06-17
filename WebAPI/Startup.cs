@@ -70,11 +70,9 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseForwardedHeaders();
-                app.UsePathBase("/WebAPI");
-            }
+
+            app.UseForwardedHeaders();
+            app.UsePathBase("/WebAPI");
 
             app.UseHttpsRedirection();
 
