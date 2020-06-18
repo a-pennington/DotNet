@@ -41,5 +41,25 @@ namespace WebAPI.Data
         {
             throw new System.NotImplementedException();
         }
+
+        IEnumerable<Matrix> I_WebAPI_Repo.GetAllMatrixStrings()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Matrix I_WebAPI_Repo.GetMatrixByID(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void I_WebAPI_Repo.CreateMatrix(Matrix matrix)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void I_WebAPI_Repo.DeleteMatrix(Matrix matrix)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

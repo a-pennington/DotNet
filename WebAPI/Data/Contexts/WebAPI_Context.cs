@@ -7,6 +7,7 @@ namespace WebAPI.Data
     {
         public WebAPI_Context(DbContextOptions<WebAPI_Context> opt) : base(opt) {}
         public DbSet<Person> DbSetPerson { get; set; }
+        public DbSet<Matrix> DbSetMatrix { get; set; }
 
     }
 }
