@@ -9,7 +9,7 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(WebAPI_Context))]
-    [Migration("20200618095902_MatrixMigration")]
+    [Migration("20200618102247_MatrixMigration")]
     partial class MatrixMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
