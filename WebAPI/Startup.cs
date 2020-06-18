@@ -46,7 +46,7 @@ namespace WebAPI
             // Swagger
             services.AddSwaggerDocument(config => {
                 config.PostProcess = document => {
-                    document.BasePath = "/WebAPI/";
+                    document.BasePath = "/WebAPI";
                     document.Info.Version = "v1";
                     document.Info.Title = "WebAPI";
                     document.Info.Description = "";
@@ -84,9 +84,12 @@ namespace WebAPI
 
             // Swagger Front End
             NSwag.AspNetCore.SwaggerUi3Route swaggerRoute;
-            if (env.IsDevelopment()) { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "/swagger/v1/swagger.json"); }
-            else { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "WebAPI/swagger/v1/swagger.json"); }
-            app.UseOpenApi();
+            if (env.IsDevelopment()) 
+            { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "/swagger/v1/swagger.json"); }
+            else { swaggerRoute = new NSwag.AspNetCore.SwaggerUi3Route("v1", "/WebAPI/swagger/v1/swagger.json"); }
+            app.UseOpenApi(config => {
+                config.PostProcess = (d, _) => { d.BasePath = "/WebAPI"; };
+            });
             app.UseSwaggerUi3(config => {
                 config.SwaggerRoutes.Add(swaggerRoute);
             });
