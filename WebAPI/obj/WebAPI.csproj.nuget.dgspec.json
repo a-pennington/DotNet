@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj": {}
+    "C:\\Users\\apenning\\workspace\\DotNet\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj": {
+    "C:\\Users\\apenning\\workspace\\DotNet\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\apenning\\workspace\\DotNet\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "/home/andrew/Documents/Code/DotNet/WebAPI/WebAPI.csproj",
-        "packagesPath": "/home/andrew/.nuget/packages/",
-        "outputPath": "/home/andrew/Documents/Code/DotNet/WebAPI/obj/",
+        "projectPath": "C:\\Users\\apenning\\workspace\\DotNet\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\apenning\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\apenning\\workspace\\DotNet\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andrew/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\apenning\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -85,12 +85,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -99,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

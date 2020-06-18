@@ -54,7 +54,7 @@ namespace WebAPI.Data
 
         IEnumerable<Matrix> I_WebAPI_Repo.GetAllMatrixStrings()
         {
-            throw new NotImplementedException();
+            return _context.DbSetMatrix.ToList();
         }
 
         public Matrix GetMatrixByID(int id)
