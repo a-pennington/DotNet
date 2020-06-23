@@ -21,7 +21,6 @@ namespace WebAPI
 {
     public class Startup
     {
-        readonly string MyOrigins = "_myPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -46,14 +45,7 @@ namespace WebAPI
             });
             
             // Enable CORS
-            services.AddCors(opt =>
-            {
-               opt.AddPolicy(name: MyOrigins,
-                    builder => 
-                    {
-                       builder.WithOrigins("http://andrew-pennington.ddns.net");
-                    }); 
-            });
+            services.AddCors();
 
             // Swagger
             services.AddSwaggerDocument(config => {
@@ -87,7 +79,9 @@ namespace WebAPI
 
             app.UseRouting();
 
-            app.UseCors(MyOrigins);
+            app.UseCors(builder => {
+                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            });
 
             app.UseAuthorization();
 
