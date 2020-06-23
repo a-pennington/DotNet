@@ -76,11 +76,11 @@ namespace WebAPI.Controllers
         [HttpGet("random-string")]
         public ActionResult <IEnumerable<Matrix_Read_DTO>> GetRandomMatrixString()
         {
-            int numberOfStrings = _repository.GetAllMatrixStrings().ToList().Count; // Gtes the number of 'matrix' objects in the database
+            int numberOfStrings = _repository.GetAllMatrixStrings().ToList().Count; // Gets the number of 'matrix' objects in the database
             if (numberOfStrings > 0) 
             {
-                Random random = new Random();   // Instansiates the random object
-                int ID = 1 + random.Next(numberOfStrings);  // Generates a random number in the range 'numberOfStrings', +1 as zero base, but databse is 1 base
+                Random random = new Random();   // Instanciates the random object
+                int ID = 1 + random.Next(numberOfStrings);  // Generates a random number in the range 'numberOfStrings', +1 as zero base, but database is 1 base
                 var matrixItem = _repository.GetMatrixByID(ID);     // Gets the item at position ID
                 return Ok(_mapper.Map<Matrix_Read_DTO>(matrixItem));    // Maps the object to the data transfer object for return to the client
             }
