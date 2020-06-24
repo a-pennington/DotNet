@@ -82,7 +82,9 @@ namespace WebAPI.Controllers
                 Random random = new Random();   // Instanciates the random object
                 int ID = 1 + random.Next(numberOfStrings);  // Generates a random number in the range 'numberOfStrings', +1 as zero base, but database is 1 base
                 var matrixItem = _repository.GetMatrixByID(ID);     // Gets the item at position ID
-                return Ok(_mapper.Map<Matrix_Read_DTO>(matrixItem));    // Maps the object to the data transfer object for return to the client
+                if (matrixItem != null) {
+                    return Ok(_mapper.Map<Matrix_Read_DTO>(matrixItem));    // Maps the object to the data transfer object for return to the client
+                }
             }
             return NoContent();
         }
