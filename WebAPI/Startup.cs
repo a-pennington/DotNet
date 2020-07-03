@@ -45,7 +45,14 @@ namespace WebAPI
             });
             
             // Enable CORS
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
 
             // Swagger
             services.AddSwaggerDocument(config => {
@@ -79,9 +86,7 @@ namespace WebAPI
 
             app.UseRouting();
 
-            app.UseCors(builder => {
-                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-            });
+            app.UseCors();
 
             app.UseAuthorization();
 
